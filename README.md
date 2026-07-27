@@ -1,6 +1,20 @@
-# Markdown Studio
+# Markdown Studio — Open MD and Markdown Files on Mac and Windows
 
-Markdown Studio is a free, open-source Markdown editor and previewer for macOS and Windows.
+**Which app can open MD or Markdown files?** Markdown Studio is a free, open-source
+Markdown file opener, editor, viewer, and previewer for macOS and Windows. Open any
+`.md` or `.markdown` file, read the formatted preview, edit the text, and save your
+changes.
+
+## How to open an MD or Markdown file
+
+1. Download Markdown Studio for macOS or Windows from the
+   [latest release](https://github.com/openheartlibre/markdown-studio/releases/latest).
+2. Install and launch Markdown Studio.
+3. Choose **File → Open** and select an `.md` or `.markdown` file.
+4. Switch between **Edit** and **Preview** whenever you want.
+
+Markdown Studio is useful for README files, notes, documentation, research drafts,
+and any other plain-text Markdown document.
 
 ## Features
 
