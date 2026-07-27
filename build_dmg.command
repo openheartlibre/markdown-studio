@@ -4,7 +4,8 @@ set -euo pipefail
 SCRIPT_DIR="${0:A:h}"
 APP_PATH="$SCRIPT_DIR/dist/Markdown Studio.app"
 RELEASE_DIR="$SCRIPT_DIR/releases"
-DMG_PATH="$RELEASE_DIR/Markdown-Studio-1.0.0-macOS-universal.dmg"
+VERSION="1.1.0"
+DMG_PATH="$RELEASE_DIR/Markdown-Studio-$VERSION-macOS-universal.dmg"
 STAGING_DIR="$(mktemp -d)"
 
 cleanup() {

@@ -5,7 +5,7 @@ const path = require("node:path");
 const windows = new Map();
 
 function markdownPathFromArgs(args) {
-  return args.find((arg) => /\.(md|markdown)$/i.test(arg) && !arg.startsWith("--"));
+  return args.find((arg) => /\.(md|markdown|txt|text)$/i.test(arg) && !arg.startsWith("--"));
 }
 
 function createWindow(filePath = null) {
@@ -74,7 +74,9 @@ function buildMenu() {
           click: async () => {
             const result = await dialog.showOpenDialog({
               properties: ["openFile", "multiSelections"],
-              filters: [{ name: "Markdown", extensions: ["md", "markdown"] }]
+              filters: [
+                { name: "Markdown and Text", extensions: ["md", "markdown", "txt", "text"] }
+              ]
             });
             if (!result.canceled) await openPaths(result.filePaths);
           }
@@ -115,7 +117,9 @@ function buildMenu() {
 ipcMain.handle("document:open-dialog", async () => {
   const result = await dialog.showOpenDialog({
     properties: ["openFile", "multiSelections"],
-    filters: [{ name: "Markdown", extensions: ["md", "markdown"] }]
+    filters: [
+      { name: "Markdown and Text", extensions: ["md", "markdown", "txt", "text"] }
+    ]
   });
   if (!result.canceled) await openPaths(result.filePaths);
 });
@@ -129,7 +133,9 @@ ipcMain.handle("document:save", async (event, { text, saveAs }) => {
   if (!destination) {
     const result = await dialog.showSaveDialog(window, {
       defaultPath: state.filePath || "Untitled.md",
-      filters: [{ name: "Markdown", extensions: ["md"] }]
+      filters: [
+        { name: "Markdown and Text", extensions: ["md", "markdown", "txt", "text"] }
+      ]
     });
     if (result.canceled || !result.filePath) return { canceled: true };
     destination = result.filePath;

@@ -119,7 +119,11 @@ final class DocumentWindowController: NSWindowController,
 
     func saveDocumentAs() {
         let panel = NSSavePanel()
-        panel.allowedContentTypes = [.init(filenameExtension: "md")!]
+        panel.allowedContentTypes = [
+            .init(filenameExtension: "md")!,
+            .init(filenameExtension: "markdown")!,
+            .plainText
+        ]
         panel.nameFieldStringValue = documentState.displayName
         guard panel.runModal() == .OK, let url = panel.url else { return }
         do {

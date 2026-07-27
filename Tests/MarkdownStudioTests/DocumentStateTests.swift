@@ -39,4 +39,23 @@ struct DocumentStateTests {
         #expect(!state.isDirty)
         #expect(state.fileURL == file)
     }
+
+    @Test func openAndSavePlainTextDocument() throws {
+        let folder = FileManager.default.temporaryDirectory
+            .appendingPathComponent(UUID().uuidString, isDirectory: true)
+        try FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
+        defer { try? FileManager.default.removeItem(at: folder) }
+
+        let file = folder.appendingPathComponent("notes.txt")
+        try "Plain text notes".write(to: file, atomically: true, encoding: .utf8)
+
+        let state = DocumentState()
+        try state.open(file)
+        state.updateText("Updated plain text")
+        try state.save()
+
+        #expect(state.fileURL?.pathExtension == "txt")
+        #expect(try String(contentsOf: file, encoding: .utf8) == "Updated plain text")
+        #expect(!state.isDirty)
+    }
 }

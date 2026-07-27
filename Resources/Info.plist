@@ -17,16 +17,16 @@
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>
-    <string>1.0</string>
+    <string>1.1</string>
     <key>CFBundleVersion</key>
-    <string>1</string>
+    <string>2</string>
     <key>LSMinimumSystemVersion</key>
     <string>13.0</string>
     <key>CFBundleDocumentTypes</key>
     <array>
         <dict>
             <key>CFBundleTypeName</key>
-            <string>Markdown Document</string>
+            <string>Markdown and Text Document</string>
             <key>CFBundleTypeRole</key>
             <string>Editor</string>
             <key>CFBundleTypeExtensions</key>
@@ -34,6 +34,8 @@
                 <string>md</string>
                 <string>markdown</string>
                 <string>mdown</string>
+                <string>txt</string>
+                <string>text</string>
             </array>
             <key>CFBundleTypeOSTypes</key>
             <array>

@@ -1,7 +1,7 @@
 {
   "name": "markdown-studio",
-  "version": "1.0.0",
-  "description": "A lightweight Markdown editor and previewer",
+  "version": "1.1.0",
+  "description": "A lightweight Markdown and plain-text editor and previewer",
   "main": "main.js",
   "license": "MIT",
   "author": "Markdown Studio contributors",
@@ -27,7 +27,7 @@
         "nsis",
         "portable"
       ],
-      "artifactName": "Markdown-Studio-1.0.0-Windows-${arch}.${ext}"
+      "artifactName": "Markdown-Studio-${version}-Windows-${arch}.${ext}"
     },
     "nsis": {
       "oneClick": false,
@@ -38,9 +38,11 @@
       {
         "ext": [
           "md",
-          "markdown"
+          "markdown",
+          "txt",
+          "text"
         ],
-        "name": "Markdown Document",
+        "name": "Markdown and Text Document",
         "role": "Editor"
       }
     ]
