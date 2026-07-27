@@ -1,0 +1,7 @@
+.DS_Store
+.build/
+dist/
+releases/*.dmg
+windows-app/node_modules/
+windows-app/dist/
+*.log

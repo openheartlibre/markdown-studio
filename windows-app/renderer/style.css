@@ -1,0 +1,34 @@
+:root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; overflow: hidden; }
+body { background: Canvas; color: CanvasText; }
+header {
+  height: 58px; display: flex; align-items: center; justify-content: center;
+  gap: 10px; border-bottom: 1px solid color-mix(in srgb, CanvasText 14%, transparent);
+}
+button {
+  border: 1px solid color-mix(in srgb, CanvasText 18%, transparent);
+  background: color-mix(in srgb, CanvasText 7%, Canvas);
+  color: CanvasText; border-radius: 7px; padding: 7px 12px; font-weight: 600;
+}
+button:hover { background: color-mix(in srgb, CanvasText 12%, Canvas); }
+.mode, .zoom { display: flex; align-items: center; gap: 4px; }
+.mode .active { background: color-mix(in srgb, #2589ff 25%, Canvas); }
+#zoom-value { width: 48px; text-align: center; font-variant-numeric: tabular-nums; }
+main { height: calc(100% - 58px); }
+#editor {
+  width: 100%; height: 100%; resize: none; border: 0; outline: 0;
+  padding: 34px; font: 15px/1.55 ui-monospace, Consolas, monospace;
+  color: CanvasText; background: Canvas; white-space: pre-wrap; overflow-wrap: anywhere;
+}
+#rendered {
+  max-width: 900px; height: 100%; margin: 0 auto; padding: 42px 54px 80px;
+  overflow: auto; font-size: 16px; line-height: 1.72; overflow-wrap: anywhere;
+  transform-origin: top center;
+}
+h1, h2 { border-bottom: 1px solid color-mix(in srgb, CanvasText 15%, transparent); padding-bottom: .28em; }
+pre { overflow: auto; padding: 16px; border-radius: 9px; background: color-mix(in srgb, CanvasText 8%, transparent); }
+code { font-family: ui-monospace, Consolas, monospace; }
+blockquote { border-left: 4px solid #888; margin-left: 0; padding-left: 1em; opacity: .78; }
+a { color: #1684e8; }
+.hidden { display: none !important; }

@@ -1,0 +1,48 @@
+{
+  "name": "markdown-studio",
+  "version": "1.0.0",
+  "description": "A lightweight Markdown editor and previewer",
+  "main": "main.js",
+  "license": "MIT",
+  "author": "Markdown Studio contributors",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test test/*.test.js",
+    "dist:win": "electron-builder --win nsis portable"
+  },
+  "devDependencies": {
+    "electron": "43.2.0",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "local.markdownstudio.app",
+    "productName": "Markdown Studio",
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "artifactName": "Markdown-Studio-1.0.0-Windows-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    },
+    "fileAssociations": [
+      {
+        "ext": [
+          "md",
+          "markdown"
+        ],
+        "name": "Markdown Document",
+        "role": "Editor"
+      }
+    ]
+  }
+}
